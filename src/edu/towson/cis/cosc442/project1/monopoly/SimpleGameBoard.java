@@ -2,6 +2,9 @@ package edu.towson.cis.cosc442.project1.monopoly;
 
 
 public class SimpleGameBoard extends GameBoard {
+	/**
+	 * Constructs a SimpleGameBoard by initializing and adding predefined property cells with specific attributes.
+	 */
 	public SimpleGameBoard() {
 		super();
 		PropertyCell blue1 = new PropertyCell();
