@@ -309,13 +309,22 @@ public class Player {
 		GameBoard gb = GameMaster.instance().getGameBoard();
 		PropertyCell[] cells = gb.getPropertiesInMonopoly(selectedMonopoly);
 		if((money >= (cells.length * (cells[0].getHousePrice() * houses)))) {
-			for(int i = 0; i < cells.length; i++) {
-				int newNumber = cells[i].getNumHouses() + houses;
-				if (newNumber <= 5) {
-					cells[i].setNumHouses(newNumber);
-					this.setMoney(money - (cells[i].getHousePrice() * houses));
-					GameMaster.instance().updateGUI();
-				}
+			updatePropertyHouses(houses, cells);
+		}
+	}
+
+	/**
+	 * Updates the number of houses on the given properties by adding the specified houses if within allowed limits and adjusts the player's money.
+	 * @param houses The number of houses to add to each property.
+	 * @param cells Array of properties to update houses on.
+	 */
+	private void updatePropertyHouses(int houses, PropertyCell[] cells) {
+		for(int i = 0; i < cells.length; i++) {
+			int newNumber = cells[i].getNumHouses() + houses;
+			if (newNumber <= 5) {
+				cells[i].setNumHouses(newNumber);
+				this.setMoney(money - (cells[i].getHousePrice() * houses));
+				GameMaster.instance().updateGUI();
 			}
 		}
 	}
