@@ -7,6 +7,7 @@ public class PropertyCellTest extends TestCase {
 
 	GameMaster gameMaster;
 	
+	@Override
 	protected void setUp() {
 		gameMaster = GameMaster.instance();
 		gameMaster.setGameBoard(new SimpleGameBoard());

@@ -9,6 +9,7 @@ public class CardCell extends Cell {
     }
     
     public void playAction() {
+        // Card actions are handled by the game controller when a card is drawn.
     }
     
     public int getType() {

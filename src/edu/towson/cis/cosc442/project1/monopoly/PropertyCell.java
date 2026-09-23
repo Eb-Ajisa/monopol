@@ -35,6 +35,7 @@ public class PropertyCell extends Cell {
      * Returns the selling price of this property.
      * @return The sell price of the property.
      */
+    @Override
     public int getPrice() {
 		return sellPrice;
 	}

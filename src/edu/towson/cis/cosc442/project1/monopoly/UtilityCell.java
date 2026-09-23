@@ -9,6 +9,7 @@ public class UtilityCell extends Cell {
 		UtilityCell.PRICE = price;
 	}
 
+	@Override
 	public int getPrice() {
 		return UtilityCell.PRICE;
 	}

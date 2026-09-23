@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class GameMaster {
 
 	private static GameMaster gameMaster;
-	static final public int MAX_PLAYER = 8;	
+	public static final int MAX_PLAYER = 8;	
 	private Die[] dice;
 	private GameBoard gameBoard;
 	private MonopolyGUI gui;
@@ -166,7 +166,7 @@ public class GameMaster {
     }
 
 	public Player getPlayer(int index) {
-		return (Player)players.get(index);
+		return players.get(index);
 	}
 	
 	public int getPlayerIndex(Player player) {
@@ -176,7 +176,7 @@ public class GameMaster {
     public ArrayList<Player> getSellerList() {
         ArrayList<Player> sellers = new ArrayList<Player>();
         for (Iterator<Player> iter = players.iterator(); iter.hasNext();) {
-            Player player = (Player) iter.next();
+            Player player = iter.next();
             if(player != getCurrentPlayer()) sellers.add(player);
         }
         return sellers;
@@ -191,7 +191,7 @@ public class GameMaster {
 	}
 
 	public void movePlayer(int playerIndex, int diceValue) {
-		Player player = (Player)players.get(playerIndex);
+		Player player = players.get(playerIndex);
 		movePlayer(player, diceValue);
 	}
 	
@@ -227,7 +227,7 @@ public class GameMaster {
 
 	public void reset() {
 		for(int i = 0; i < getNumberOfPlayers(); i++){
-			Player player = (Player)players.get(i);
+			Player player = players.get(i);
 			player.setPosition(gameBoard.getCell(0));
 		}
 		if(gameBoard != null) gameBoard.removeCards();
